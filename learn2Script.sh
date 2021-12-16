@@ -1,35 +1,44 @@
 #!/bin/bash
-echo Hello World!
-echo 'Hello World!'
-echo "Hello World!"
 
-#command substitution
-command1=`ls | grep txt`
-command2=$(ls | grep mbaa)
-echo command1
-echo $command1
-echo command2
-echo $command2
+echoComp(){
+	echo Hello World!
+	echo 'Hello World!'
+	echo "Hello World!"
+}
+
+#command substitution example
+commandSubExample(){
+	command1=`ls | grep txt`
+	command2=$(ls | grep mbaa)
+	echo command1
+	echo $command1
+	echo command2
+	echo $command2
+}
 
 #mathematical expressions
-echo $((5+3))
-echo $((5-3))
-echo $((5*3))
-echo $((5/3))
+mathExprExample(){
+	echo $((5+3))
+	echo $((5-3))
+	echo $((5*3))
+	echo $((5/3))
+}
 
 #read and write
-echo "What is your name? "
-read name
+readWriteExample(){
+	echo "What is your name? "
+	read name
 
-#output name
-echo "My name is : $name"
-echo 'My name is : $name'
+	#output name
+	echo "My name is : $name"
+	echo 'My name is : $name'
 
-#write name to file
-echo "My name is $name" >> scriptStandardOutput.txt
-eco "My name is $name" 2>> scriptStandardError.txt
-echo "My name is $name" &>> scriptToAllOutput.txt
-eco "My name is $name" &>> scriptToAllOutput.txt
+	#write name to file
+	echo "My name is $name" >> scriptStandardOutput.txt
+	eco "My name is $name" 2>> scriptStandardError.txt
+	echo "My name is $name" &>> scriptToAllOutput.txt
+	eco "My name is $name" &>> scriptToAllOutput.txt
+}
 
 #PART2
 #A function to return an echo statement
@@ -53,7 +62,7 @@ compFunc(){
 		echo "$1 = $2"
 	fi
 }
-
+readWriteExample
 #invoke the hello function
 helloFunc "How is the weather" "fine" 
 
