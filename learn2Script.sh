@@ -49,6 +49,7 @@ helloFunc(){
 	echo $#
 }
 
+#numeric comparisons
 compFunc(){
 	echo "$1"
 	echo "$2"
@@ -62,6 +63,28 @@ compFunc(){
 		echo "$1 = $2"
 	fi
 }
+
+#string comparisons takes two string arguments
+strCompFunc(){
+	if [[ $1 = $2 ]]
+	then
+		echo "$1 = $2"
+	else
+		echo "The strings do not match"
+	fi
+}
+
+#count from 0 to max
+countToVal(){
+	max=$1
+	i=0
+	while [ $i -lt $max ]
+	do
+		echo $i
+		((i=i+1))
+	done
+	echo "completedCounting"
+}
 readWriteExample
 #invoke the hello function
 helloFunc "How is the weather" "fine" 
@@ -72,3 +95,7 @@ compFunc 2 1
 compFunc 1 1
 
 #need to do string comparison
+strCompFunc "abc" "abc"
+
+#count from to val
+countToVal 10
